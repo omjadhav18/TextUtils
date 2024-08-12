@@ -53,15 +53,15 @@ export default function Textform(props) {
           rows="8"
         ></textarea>
         <div className="my-5">
-        <button className="btn btn-primary mx-2" onClick={onUpperClick}>Convert To Uppercase</button>
-        <button className="btn btn-primary mx-2" onClick={onLowerClick}>Convert To LowerCase</button>
-        <button className="btn btn-primary mx-2" onClick={onClearClick}>Clear</button>
-        <button className="btn btn-primary mx-2" onClick={onCopyClick}>{textcopy}</button>
-        <button className="btn btn-primary mx-2" onClick={onSpaceClick}>Remove Extra Spaces</button>
+        <button className="btn btn-primary mx-2 my-1" onClick={onUpperClick}>Convert To Uppercase</button>
+        <button className="btn btn-primary mx-2 my-1" onClick={onLowerClick}>Convert To LowerCase</button>
+        <button className="btn btn-primary mx-2 my-1" onClick={onClearClick}>Clear</button>
+        <button className="btn btn-primary mx-2 my-1" onClick={onCopyClick}>{textcopy}</button>
+        <button className="btn btn-primary mx-2 my-1" onClick={onSpaceClick}>Remove Extra Spaces</button>
         </div>
       </div>
       <h1 className={`my-5 text-${props.mode==='light'?'black':'white'}`}>Summary</h1>
-      <p className={`my-5 text-${props.mode==='light'?'black':'white'}`}>{text.split(' ').length} - words    {text.length} - characters </p>
+      <p className={`my-5 text-${props.mode==='light'?'black':'white'}`}>{text.split(" ").filter((element)=>{return element.length!==0}).length} - words    {text.length} - characters </p>
       </div>
     </>
   );
